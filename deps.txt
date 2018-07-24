@@ -1,0 +1,22 @@
+app: 'androidProcessor' dependencies won't be recognized as kapt annotation processors. Please change the configuration name to 'kapt' for these artifacts: 'com.google.dagger:dagger-compiler:2.13', 'com.google.dagger:dagger-compiler:2.13', 'com.jakewharton:butterknife-compiler:8.8.1' and apply the kapt plugin: "apply plugin: 'kotlin-kapt'".
+:dependencies
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+No configurations
+
+BUILD SUCCESSFUL in 0s
+1 actionable task: 1 executed
+app: 'androidProcessor' dependencies won't be recognized as kapt annotation processors. Please change the configuration name to 'kapt' for these artifacts: 'com.google.dagger:dagger-compiler:2.13', 'com.google.dagger:dagger-compiler:2.13', 'com.jakewharton:butterknife-compiler:8.8.1'.
+:dependencies
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+No configurations
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed

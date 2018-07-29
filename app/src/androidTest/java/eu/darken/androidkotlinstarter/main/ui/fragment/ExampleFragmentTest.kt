@@ -51,7 +51,7 @@ class ExampleFragmentTest {
 
         doAnswer { invocationOnMock -> null }.`when`(presenter).onBindChange(any<ExampleFragmentPresenter.View>())
         `when`(presenter.component).thenReturn(component)
-        fragmentRule.setManualInjector(injector)
+        fragmentRule.manualInjector = injector
     }
 
     @After

@@ -9,23 +9,14 @@ import timber.log.Timber
 
 
 abstract class SmartService : Service() {
-    private val tag: String
-
-    init {
-        tag = App.logTag("Service", this.javaClass.simpleName + "(" + Integer.toHexString(hashCode()) + ")")
-    }
+    private val tag: String = App.logTag("Service", this.javaClass.simpleName + "(" + Integer.toHexString(this.hashCode()) + ")")
 
     override fun onCreate() {
         Timber.tag(tag).d("onCreate()")
         super.onCreate()
     }
 
-    override fun onStart(intent: Intent, startId: Int) {
-        Timber.tag(tag).d("onStart(intent=%s, startId=%d)", intent, startId)
-        super.onStart(intent, startId)
-    }
-
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Timber.tag(tag).d("onStartCommand(intent=%s, flags=%s startId=%d)", intent, flags, startId)
         return super.onStartCommand(intent, flags, startId)
     }

@@ -5,10 +5,10 @@ import android.content.BroadcastReceiver
 import dagger.Binds
 import dagger.Module
 import dagger.android.AndroidInjector
-import dagger.android.BroadcastReceiverKey
 import dagger.multibindings.IntoMap
 import eu.darken.androidkotlinstarter.main.core.receiver.ExampleReceiver
 import eu.darken.androidkotlinstarter.main.core.receiver.ExampleReceiverComponent
+import eu.darken.mvpbakery.injection.broadcastreceiver.BroadcastReceiverKey
 
 @Module(subcomponents = arrayOf(ExampleReceiverComponent::class))
 internal abstract class ReceiverBinderModule {

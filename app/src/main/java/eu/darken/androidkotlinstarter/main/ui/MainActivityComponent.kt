@@ -6,12 +6,12 @@ import dagger.Binds
 import dagger.Module
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
-import dagger.android.support.FragmentKey
 import dagger.multibindings.IntoMap
 import eu.darken.androidkotlinstarter.main.ui.fragment.ExampleFragment
 import eu.darken.androidkotlinstarter.main.ui.fragment.ExampleFragmentComponent
 import eu.darken.mvpbakery.injection.PresenterComponent
 import eu.darken.mvpbakery.injection.activity.ActivityComponent
+import eu.darken.mvpbakery.injection.fragment.FragmentKey
 
 @MainActivityComponent.Scope
 @Subcomponent(modules = arrayOf(MainActivityComponent.FragmentBinderModule::class))

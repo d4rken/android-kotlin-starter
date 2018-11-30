@@ -5,10 +5,10 @@ import android.app.Service
 import dagger.Binds
 import dagger.Module
 import dagger.android.AndroidInjector
-import dagger.android.ServiceKey
 import dagger.multibindings.IntoMap
 import eu.darken.androidkotlinstarter.main.core.service.ExampleService
 import eu.darken.androidkotlinstarter.main.core.service.ExampleServiceComponent
+import eu.darken.mvpbakery.injection.service.ServiceKey
 
 @Module(subcomponents = arrayOf(ExampleServiceComponent::class))
 internal abstract class ServiceBinderModule {

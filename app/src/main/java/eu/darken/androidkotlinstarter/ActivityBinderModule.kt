@@ -4,11 +4,11 @@ import android.app.Activity
 
 import dagger.Binds
 import dagger.Module
-import dagger.android.ActivityKey
 import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
 import eu.darken.androidkotlinstarter.main.ui.MainActivity
 import eu.darken.androidkotlinstarter.main.ui.MainActivityComponent
+import eu.darken.mvpbakery.injection.activity.ActivityKey
 
 @Module(subcomponents = arrayOf(MainActivityComponent::class))
 internal abstract class ActivityBinderModule {

@@ -7,6 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -21,16 +22,30 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/emoji_text"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="32dp"
+        android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/ic_menu_compass"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.*
-import android.widget.TextView
+import android.widget.ImageView
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
@@ -22,7 +22,7 @@ import javax.inject.Inject
 class ExampleFragment : SmartFragment(), ExampleFragmentPresenter.View {
 
     @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
-    @BindView(R.id.emoji_text) lateinit var emojiText: TextView
+    @BindView(R.id.image) lateinit var image: ImageView
 
     @Inject lateinit var presenter: ExampleFragmentPresenter
 
@@ -51,6 +51,13 @@ class ExampleFragment : SmartFragment(), ExampleFragmentPresenter.View {
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
     }
 
+    override fun onResume() {
+        GlideApp.with(context!!)
+                .load("test")
+//                .into(TintTarget(image)) // works
+                .into(image) // doesn't work
+        super.onResume()
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_example, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -73,7 +80,7 @@ class ExampleFragment : SmartFragment(), ExampleFragmentPresenter.View {
     }
 
     override fun showEmoji(emoji: String) {
-        emojiText.text = emoji
+
     }
 
     companion object {

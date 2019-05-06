@@ -1,15 +1,14 @@
 package eu.darken.androidkotlinstarter.main.ui.fragment
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.*
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.google.android.material.snackbar.Snackbar
 import eu.darken.androidkotlinstarter.R
 import eu.darken.androidkotlinstarter.common.smart.SmartFragment
 import eu.darken.mvpbakery.base.MVPBakery
@@ -78,7 +77,7 @@ class ExampleFragment : SmartFragment(), ExampleFragmentPresenter.View {
 
     companion object {
 
-        fun newInstance(): Fragment {
+        fun newInstance(): androidx.fragment.app.Fragment {
             return ExampleFragment()
         }
     }

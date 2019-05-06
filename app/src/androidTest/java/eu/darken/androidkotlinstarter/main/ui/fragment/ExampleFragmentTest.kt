@@ -1,11 +1,10 @@
 package eu.darken.androidkotlinstarter.main.ui.fragment
 
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.espresso.matcher.ViewMatchers.withText
-import android.support.v4.app.Fragment
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import dagger.android.AndroidInjector
 import eu.darken.androidkotlinstarter.R
 import eu.darken.mvpbakery.injection.ManualInjector
@@ -29,13 +28,13 @@ class ExampleFragmentTest {
     @Mock lateinit var component: ExampleFragmentComponent
 
 
-    private val injector = object : ManualInjector<Fragment> {
-        override fun get(instance: Fragment): AndroidInjector<Fragment> {
+    private val injector = object : ManualInjector<androidx.fragment.app.Fragment> {
+        override fun get(instance: androidx.fragment.app.Fragment): AndroidInjector<androidx.fragment.app.Fragment> {
             @Suppress("UNCHECKED_CAST")
-            return component as AndroidInjector<Fragment>
+            return component as AndroidInjector<androidx.fragment.app.Fragment>
         }
 
-        override fun inject(fragment: Fragment) {
+        override fun inject(fragment: androidx.fragment.app.Fragment) {
 
         }
     }

@@ -7,7 +7,7 @@ import eu.darken.mvpbakery.injection.fragment.FragmentComponent
 
 @ExampleFragmentComponent.Scope
 @Subcomponent
-interface ExampleFragmentComponent : PresenterComponent<ExampleFragmentPresenter.View, ExampleFragmentPresenter>, FragmentComponent<ExampleFragment> {
+interface ExampleFragmentComponent : PresenterComponent<ExampleFragmentPresenter, ExampleFragmentComponent>, FragmentComponent<ExampleFragment> {
     @Subcomponent.Builder
     abstract class Builder : FragmentComponent.Builder<ExampleFragment, ExampleFragmentComponent>()
 

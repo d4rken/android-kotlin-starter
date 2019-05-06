@@ -10,7 +10,7 @@ constructor(private val someRepo: SomeRepo) : ComponentPresenter<MainActivityPre
 
     override fun onBindChange(view: View?) {
         super.onBindChange(view)
-        onView { v ->
+        withView { v ->
             if (someRepo.isShowFragment) {
                 v.showExampleFragment()
             }

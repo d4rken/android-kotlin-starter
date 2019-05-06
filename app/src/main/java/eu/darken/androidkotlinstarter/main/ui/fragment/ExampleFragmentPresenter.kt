@@ -26,7 +26,7 @@ internal constructor(private val someRepo: SomeRepo) : ComponentPresenter<Exampl
                     .repeatWhen { errors -> errors.flatMapSingle { error -> Single.timer(1, TimeUnit.SECONDS) } }
                     .subscribeOn(Schedulers.computation())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe { emoji -> onView { v -> v.showEmoji(emoji) } }
+                    .subscribe { emoji -> withView { v -> v.showEmoji(emoji) } }
         } else {
             emojiSub.dispose()
         }

@@ -1,7 +1,6 @@
 package eu.darken.androidkotlinstarter.main.ui
 
 
-import android.support.v4.app.Fragment
 import dagger.Binds
 import dagger.Module
 import dagger.Subcomponent
@@ -15,7 +14,7 @@ import eu.darken.mvpbakery.injection.fragment.FragmentKey
 
 @MainActivityComponent.Scope
 @Subcomponent(modules = arrayOf(MainActivityComponent.FragmentBinderModule::class))
-interface MainActivityComponent : ActivityComponent<MainActivity>, PresenterComponent<MainActivityPresenter.View, MainActivityPresenter> {
+interface MainActivityComponent : ActivityComponent<MainActivity>, PresenterComponent<MainActivityPresenter, MainActivityComponent> {
 
     @Subcomponent.Builder
     abstract class Builder : ActivityComponent.Builder<MainActivity, MainActivityComponent>()
@@ -30,7 +29,7 @@ interface MainActivityComponent : ActivityComponent<MainActivity>, PresenterComp
         @Binds
         @IntoMap
         @FragmentKey(ExampleFragment::class)
-        internal abstract fun exampleFragment(impl: ExampleFragmentComponent.Builder): AndroidInjector.Factory<out Fragment>
+        internal abstract fun exampleFragment(impl: ExampleFragmentComponent.Builder): AndroidInjector.Factory<out androidx.fragment.app.Fragment>
 
     }
 }

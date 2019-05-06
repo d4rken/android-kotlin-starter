@@ -1,14 +1,13 @@
 package testhelper
 
-import android.support.test.rule.ActivityTestRule
-import android.support.v4.app.Fragment
+import androidx.test.rule.ActivityTestRule
 import eu.darken.androidkotlinstarter.FragmentTestActivity
 import eu.darken.mvpbakery.injection.ManualInjector
 import junit.framework.Assert
 
-class FragmentTestRule<FragmentT : Fragment>(private val fragmentClass: Class<FragmentT>) : ActivityTestRule<FragmentTestActivity>(FragmentTestActivity::class.java, true, false) {
+class FragmentTestRule<FragmentT : androidx.fragment.app.Fragment>(private val fragmentClass: Class<FragmentT>) : ActivityTestRule<FragmentTestActivity>(FragmentTestActivity::class.java, true, false) {
     lateinit var fragment: FragmentT
-    lateinit var manualInjector: ManualInjector<Fragment>
+    lateinit var manualInjector: ManualInjector<androidx.fragment.app.Fragment>
 
 
     override fun afterActivityLaunched() {

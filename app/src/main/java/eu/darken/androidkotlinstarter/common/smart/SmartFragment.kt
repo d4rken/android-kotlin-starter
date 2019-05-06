@@ -3,8 +3,8 @@ package eu.darken.androidkotlinstarter.common.smart
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import butterknife.Unbinder
 import eu.darken.androidkotlinstarter.App
 import timber.log.Timber

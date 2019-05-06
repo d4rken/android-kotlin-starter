@@ -1,10 +1,9 @@
 package eu.darken.androidkotlinstarter.main.ui
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import eu.darken.androidkotlinstarter.R
 import eu.darken.androidkotlinstarter.main.ui.fragment.ExampleFragment
@@ -19,7 +18,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainActivityPresenter.View, HasManualFragmentInjector {
 
-    @Inject lateinit var fragmentInjector: ComponentSource<Fragment>
+    @Inject lateinit var fragmentInjector: ComponentSource<androidx.fragment.app.Fragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.BaseAppTheme_NoActionBar)
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View, HasManualF
         }
     }
 
-    override fun supportFragmentInjector(): ManualInjector<Fragment> = fragmentInjector
+    override fun supportFragmentInjector(): ManualInjector<androidx.fragment.app.Fragment> = fragmentInjector
 
     override fun showExampleFragment() {
         var fragment = supportFragmentManager.findFragmentById(R.id.content_frame)

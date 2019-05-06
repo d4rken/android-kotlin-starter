@@ -2,13 +2,12 @@ package eu.darken.androidkotlinstarter.main.ui
 
 
 import android.app.Activity
-import android.support.test.InstrumentationRegistry
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.rule.ActivityTestRule
-import android.support.v4.app.Fragment
+import androidx.test.InstrumentationRegistry
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.rule.ActivityTestRule
 import dagger.android.AndroidInjector
 import eu.darken.androidkotlinstarter.ExampleApplicationMock
 import eu.darken.androidkotlinstarter.R
@@ -38,7 +37,7 @@ class MainActivityTest {
     @Mock lateinit var mainPresenter: MainActivityPresenter
     @Mock lateinit var mainComponent: MainActivityComponent
 
-    @Mock lateinit var fragmentInjector: ComponentSource<Fragment>
+    @Mock lateinit var fragmentInjector: ComponentSource<androidx.fragment.app.Fragment>
     @Mock lateinit var exampleFragmentPresemter: ExampleFragmentPresenter
     @Mock lateinit var exampleFragmentComponent: ExampleFragmentComponent
 
